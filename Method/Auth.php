@@ -26,9 +26,9 @@ class Auth extends MethodForm
 	
 	public function createForm(GDT_Form $form) : void
 	{
-		$form->addFields(array(
+		$form->addFields(
 			GDT_IGAuthButton::make(),
-		));
+		);
 	}
 
 	public function execute()
