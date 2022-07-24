@@ -22,7 +22,7 @@ class Auth extends MethodForm
 {
 	public function isUserRequired() : bool { return false; }
 	
-	public function getUserType() { return 'ghost'; }
+	public function getUserType() : ?string { return 'ghost'; }
 	
 	public function createForm(GDT_Form $form) : void
 	{
