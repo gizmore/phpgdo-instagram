@@ -24,5 +24,5 @@ final class GDT_IGAuthButton extends GDT_Button
 		return "https://instagram.com/oauth/authorize/?client_id=$clientId&redirect_uri=$redirectURL&response_type=code";
 	}
 	
-	public function renderCell() : string { return GDT_Template::php('Instagram', 'cell/igauthbutton.php', ['field' => $this]); }
+	public function renderHTML() : string { return GDT_Template::php('Instagram', 'cell/igauthbutton.php', ['field' => $this]); }
 }
