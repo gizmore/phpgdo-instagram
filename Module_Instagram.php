@@ -13,13 +13,13 @@ use GDO\UI\GDT_Error;
 use GDO\UI\GDT_Button;
 use GDO\Avatar\GDO_Avatar;
 use GDO\File\GDO_File;
-use GDO\Util\Strings;
+
 /**
  * Instagram SDK Module and Authentication.
  * 
  * @author gizmore
- * @version 6.08
- * 
+ * @version 7.0.1
+ * @since 6.8.0
  * @see OAuthToken
  * @see GDT_FBAuthButton
  */
@@ -102,4 +102,5 @@ final class Module_Instagram extends GDO_Module
 	{
 		return md5_file($file->getPath()) !== md5($contents);
 	}
+	
 }
