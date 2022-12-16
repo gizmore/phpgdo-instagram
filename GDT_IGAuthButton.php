@@ -4,14 +4,18 @@ namespace GDO\Instagram;
 use GDO\Core\GDT_Template;
 use GDO\UI\GDT_Button;
 use GDO\Util\Strings;
+
 /**
- * Login with Facebook button.
+ * Login with Instagram button.
+ * 
  * @author gizmore
  */
 final class GDT_IGAuthButton extends GDT_Button
 {
+	
 	protected function __construct()
 	{
+		parent::__construct();
 		$this->name('btn_instagram');
 		$this->href($this->instagramURL());
 	}

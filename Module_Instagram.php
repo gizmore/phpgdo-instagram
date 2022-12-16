@@ -44,18 +44,17 @@ final class Module_Instagram extends GDO_Module
 	public function cfgClientID() { return $this->getConfigValue('instagram_client_id'); }
 	public function cfgSecret() { return $this->getConfigValue('instagram_secret'); }
 	
-// 	#############
-// 	### Hooks ###
-// 	#############
-// 	/**
-// 	 * Hook into register and login form creation and add a link.
-// 	 * @param GDT_Form $form
-// 	 */
+	#############
+	### Hooks ###
+	#############
+	/**
+	 * Hook into register and login form creation and add a link.
+	 */
 	public function hookLoginForm(GDT_Form $form) { $this->hookRegisterForm($form); }
 	public function hookRegisterForm(GDT_Form $form)
 	{
-	    /** @var $cont \GDO\UI\GDT_Container **/
-	    $form->actions()->addField(GDT_Button::make('link_instagram_auth')->secondary()->href(href('Instagram', 'Auth')));
+	    $form->actions()->addField(
+	    	GDT_Button::make('link_instagram_auth')->secondary()->href(href('Instagram', 'Auth')));
 	}
 
 	public function hookIGUserAuthenticated(GDO_User $user, $accessToken, $data)
@@ -98,6 +97,13 @@ final class Module_Instagram extends GDO_Module
 		}
 	}
 	
+	/**
+	 * @todo Speed function up by maybe using mstat changetime. thx libera#programming ev0catus.
+	 * 
+	 * @param GDO_File $file
+	 * @param string $contents
+	 * @return boolean
+	 */
 	private function hasFileChanged(GDO_File $file, $contents)
 	{
 		return md5_file($file->getPath()) !== md5($contents);

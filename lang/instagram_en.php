@@ -1,4 +1,5 @@
 <?php
+namespace GDO\Instagram\lang;
 return array(
 'link_instagram_auth' => 'Signup with Instagram',
 'btn_continue_with_instagram' => 'Continue with Instagram',
