@@ -7,19 +7,19 @@ use GDO\Util\Strings;
 
 /**
  * Login with Instagram button.
- * 
+ *
  * @author gizmore
  */
 final class GDT_IGAuthButton extends GDT_Button
 {
-	
+
 	protected function __construct()
 	{
 		parent::__construct();
 		$this->name('btn_instagram');
 		$this->href($this->instagramURL());
 	}
-	
+
 	public function instagramURL()
 	{
 		$module = Module_Instagram::instance();
@@ -27,6 +27,7 @@ final class GDT_IGAuthButton extends GDT_Button
 		$redirectURL = Strings::rsubstrTo(url('Instagram', 'Auth'), '&me=');
 		return "https://instagram.com/oauth/authorize/?client_id=$clientId&redirect_uri=$redirectURL&response_type=code";
 	}
-	
-	public function renderHTML() : string { return GDT_Template::php('Instagram', 'cell/igauthbutton.php', ['field' => $this]); }
+
+	public function renderHTML(): string { return GDT_Template::php('Instagram', 'cell/igauthbutton.php', ['field' => $this]); }
+
 }
