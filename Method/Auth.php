@@ -1,6 +1,7 @@
 <?php
 namespace GDO\Instagram\Method;
 
+use GDO\Core\GDT;
 use GDO\Core\GDT_Hook;
 use GDO\Facebook\GDO_OAuthToken;
 use GDO\Form\GDT_Form;
@@ -34,7 +35,7 @@ class Auth extends MethodForm
 		);
 	}
 
-	public function execute()
+	public function execute(): GDT
 	{
 		if ($code = Common::getRequestString('code'))
 		{
