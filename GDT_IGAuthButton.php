@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 namespace GDO\Instagram;
 
 use GDO\Core\GDT_Template;
@@ -9,6 +10,7 @@ use GDO\Util\Strings;
  * Login with Instagram button.
  *
  * @author gizmore
+ * @version 7.0.3
  */
 final class GDT_IGAuthButton extends GDT_Button
 {
@@ -28,6 +30,10 @@ final class GDT_IGAuthButton extends GDT_Button
 		return "https://instagram.com/oauth/authorize/?client_id=$clientId&redirect_uri=$redirectURL&response_type=code";
 	}
 
-	public function renderHTML(): string { return GDT_Template::php('Instagram', 'cell/igauthbutton.php', ['field' => $this]); }
+	public function renderHTML(): string
+	{
+		return GDT_Template::php('Instagram', 'igauthbutton.php', [
+			'field' => $this]);
+	}
 
 }
