@@ -28,7 +28,7 @@ class Auth extends MethodForm
 
 	public function getUserType(): ?string { return 'ghost'; }
 
-	public function createForm(GDT_Form $form): void
+	protected function createForm(GDT_Form $form): void
 	{
 		$form->addFields(
 			GDT_IGAuthButton::make(),
